@@ -98,7 +98,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     outline: none; 
     border-color: #007BFF; 
     }
-    </style>
+#emailError {
+    color: red;
+    display: none; 
+    margin-top: 10px;
+    padding: 8px;
+    background-color: rgba(255,0,0,0.2); 
+    border-radius: 4px;
+    border: 1px solid red;
+    width: 80%;
+    margin-right: 10%;
+    text-align: center;
+}
+ </style>
 </head>
 <body>
 
@@ -113,29 +125,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <label for="email">Manhattan College Email:</label>
     <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@manhattan\.edu" required>
-    <span id="emailError" style="color: red; display: none;">Email should end with @manhattan.edu</span>
+    <span id="emailError">Email should end with @manhattan.edu</span>
 
     <input type="submit" value="Signup" style="width: 50%; margin-left: 25%; margin-right: 25%;">
 
 </form>
 
 <script>
-    function validateEmail() {
+  document.getElementById("email").addEventListener("input", function() {
+    validateEmail();
+});
+
+function validateEmail() {
     var email = document.getElementById("email").value;
     var emailError = document.getElementById("emailError");
     
     if (!email.endsWith("@manhattan.edu")) {
         emailError.style.display = "block";
-        setTimeout(function() {
-            emailError.style.display = "none";
-        }, 3000);  
-        
-        return false; 
+    } else {
+        emailError.style.display = "none";
     }
-    
-    emailError.style.display = "none";
-    return true; 
 }
+
 
 </script>
 
