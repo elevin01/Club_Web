@@ -121,17 +121,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <script>
     function validateEmail() {
-        var email = document.getElementById("email").value;
-        var emailError = document.getElementById("emailError");
+    var email = document.getElementById("email").value;
+    var emailError = document.getElementById("emailError");
+    
+    if (!email.endsWith("@manhattan.edu")) {
+        emailError.style.display = "block";
+        setTimeout(function() {
+            emailError.style.display = "none";
+        }, 3000);  
         
-        if (!email.endsWith("@manhattan.edu")) {
-            emailError.style.display = "block";
-            return false;
-        }
-        
-        emailError.style.display = "none";
-        return true;
+        return false; 
     }
+    
+    emailError.style.display = "none";
+    return true; 
+}
+
 </script>
 
 </body>
