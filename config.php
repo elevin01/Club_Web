@@ -4,7 +4,7 @@ $db_username = "rara";
 $db_password = "mysqllogin";
 $db_name = "SCHOOL";
 // Imma leave this part to you.
-
+//hello you are single 
 function getConnection() {
     global $host, $db_username, $db_password, $db_name;
     
