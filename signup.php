@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $conn = getConnection();
     
-    $stmt = $conn->prepare("INSERT INTO Users (FirstName, LastName, Email) VALUES (?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO USERS (FirstName, LastName, Email) VALUES (?, ?, ?)");
     $stmt->bind_param("sss", $firstName, $lastName, $email); 
     
     if ($stmt->execute()) {
