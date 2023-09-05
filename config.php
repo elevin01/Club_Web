@@ -1,7 +1,7 @@
 <?php
 $host = "LOCALHOST";
-$db_username = "rara";
-$db_password = "mysqllogin";
+$db_username = "mine";
+$db_password = "password";
 $db_name = "SCHOOL";
 // Imma leave this part to you.
 function getConnection() {
