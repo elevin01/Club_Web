@@ -8,3 +8,5 @@ This repository contains the PHP implementation for Club Web's data integration 
 - Simple Integration: Write member data to Google Sheets with just a function call.
 - Modular Code: Easily adaptable for further extensions or integrations.
 - Service Account Authentication: Secure data access using Google's service account.
+
+  
