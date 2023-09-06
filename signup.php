@@ -1,5 +1,6 @@
 <?php
 include 'config.php';  // to include our database connection
+include_once 'google_sheets_helper.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $firstName = $_POST["firstName"];
@@ -12,10 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sss", $firstName, $lastName, $email); 
     
     if ($stmt->execute()) {
-        echo "Welcome to the club!";
+        writeToGoogleSheets($firstName, $lastName, $email);
+        echo "<script>alert('Welcome to the club!');</script>";
     } else {
         echo "Error: " . $stmt->error;
-    }
+    }    
     
     $stmt->close();
     $conn->close();

@@ -1,6 +1,6 @@
 <?php
 $host = "LOCALHOST";
-$db_username = "mine";
+$db_username = "lime";
 $db_password = "password";
 $db_name = "SCHOOL";
 // Imma leave this part to you.
