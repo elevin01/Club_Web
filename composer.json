@@ -1,0 +1,12 @@
+{
+    "name": "emil07/club_web",
+    "authors": [
+        {
+            "name": "elevin01",
+            "email": "emiltlevin@gmail.com"
+        }
+    ],
+    "require": {
+        "google/apiclient": "^2.0"
+    }
+}
